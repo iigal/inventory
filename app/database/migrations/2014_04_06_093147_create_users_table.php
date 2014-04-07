@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration {
 			$t->increments('id');
 			$t->string('username', 16);
 			$t->string('password', 64);
+			$t->string('roles',11);
 			$t->timestamps();
 		});
 	}

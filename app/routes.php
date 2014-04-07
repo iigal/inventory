@@ -32,7 +32,8 @@ Route::post('login', function () {
         
         if (Auth::attempt($user)) {
             return Redirect::route('home')
-                ->with('flash_notice', 'You are successfully logged in.');
+                ->with('flash_notice', 'You are successfully logged in.')
+            	->with('roles', 'value');
         }
         
         // authentication failure! lets go back to the login page
