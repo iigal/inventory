@@ -8,28 +8,18 @@
     <meta name="description" content="">
     <meta name="author" content="Shashank Shree Neupane">
 	{{ HTML::style('css/bootstrap.min.css') }}
-	<title>Inventory Management</title>
-	
+	<title>Inventory Management</title>	
 </head>
 <body>
-<<<<<<< HEAD
 	<div class="container">
 		<!-- Static navbar -->
       <div class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+          <div class="navbar-header">            
             {{ link_to_route('home', 'Inventory Management', $parameters = array(), $attributes = array('class'=>"navbar-brand"));}}
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-
-	
 				
 				@if(Auth::check())				
 				{{-- ********show this if the user is superadmin******** --}}				
@@ -56,28 +46,16 @@
 		                  <li><a href="#">view more</a></li>
                 		</ul>
                 	</li>
-
-				
-				@if(Auth::check())
-				
-				{{-- ********show this if the user is superadmin******** --}}
-				
-				@if(Auth::user()->roles === "superadmin")
-					<li>Add Groups</li>
-				@endif
-				
-					<li>{{ HTML::link('profile', 'Profile' ) }}</li>
-					<li>{{ link_to_route('logout', 'Logout ('.Auth::user()->username.')') }}</li>
+                	<li>{{ link_to_route('logout', 'Logout ('.Auth::user()->username.')') }}</li>
 				@else
 					<li>{{ link_to_route('login', 'Login', $parameters = array(), $attributes = array());}}</li>
+				@endif
 				@endif
              
                          
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
-      </div>
-              
-			
+      </div> 
 		@yield('content')
 	</div>
 	
@@ -85,7 +63,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     {{ HTML::script('js/jquery.js') }}
-    {{ HTML::script('js/bootstrap.min.js  ') }} 
+    {{ HTML::script('js/bootstrap.min.js') }} 
 
   </body>
 </html>

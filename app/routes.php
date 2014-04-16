@@ -54,5 +54,5 @@ Route::get('profile', array('as' => 'profile', function () {
 }))->before('auth');
 
 Route::resource('itemsin','ItemsinController');
-}))->before('auth');
+
 

@@ -10,12 +10,11 @@ class ItemsinController extends \BaseController {
 	public function index()
 	{
 		// get all the items
-		$items = Itemsin->fetchNames();
-//}		
+		$items= Itemsin::fetchNames();		
 		
 		// load the view and pass the items
 		return View::make('itemsin.index')
-			->with('items', $items);
+			->with('items', $item);
 	}
 
 	/**
